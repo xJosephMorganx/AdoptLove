@@ -17,7 +17,7 @@ Next, I created the Flask application instance and configured the folder where i
 
 Thanks to the fact that I am currently taking a database class at the university, this part was one of the simplest for me. After creating a database named dogs.db, I defined a function to create a table called dogs, where I included an auto-incrementing ID, the dog’s name, the dog’s age, a photo, the dog's owner's name, the owner’s contact email, and a timestamp using the current date.
 
-![app1](/adopt_love/assets/images/image1.png)
+![app1](/assets/images/image1.png)
 
 Then, I decided to create a Jinja2 template called “base.html.” Here, I declared the doctype and the basic HTML tag, followed by the header where I used metadata, in this case, UTF-8, which includes most characters from all languages. I configured the viewport to be responsive, ensuring the design adjusts correctly on different screen sizes, and set the page title, which appears on the browser tab. I also linked an external CSS stylesheet to format the page and added a Flask function that generates the correct URL for the CSS file in the static folder.
 
