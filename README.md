@@ -5,7 +5,8 @@
 
 My name is José Luis Gómez Sánchez and I am from Guadalajara, Mexico.
 
-I had two reasons for deciding to create this project. First, after working on pset 9, I felt comfortable using Flask (my second favorite topic in the course, just after databases). Second, because in the part of the city where I live, there is a severe problem with stray dogs. I have adopted 3 dogs so far, but due to my financial constraints, I don't think I can adopt more at the moment. That's why I decided to create a web application to facilitate adoption, both for those who want to put a dog up for adoption and for those who want to adopt a dog.
+I had two reasons for deciding to create this project. 
+First, after working on pset 9, I felt comfortable using Flask (my second favorite topic in the course, just after databases). Second, because in the part of the city where I live, there is a severe problem with stray dogs. I have adopted 3 dogs so far, but due to my financial constraints, I don't think I can adopt more at the moment. That's why I decided to create a web application to facilitate adoption, both for those who want to put a dog up for adoption and for those who want to adopt a dog.
 
 I decided to do it in Visual Studio standalone app because I wanted to remove the training wheels from CS50.
 
