@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="adopt-info">
+        <h1>Contact Information</h1>
+        <p><strong>Owner Name:</strong> {{ dog_info[0] }}</p>
+        <p><strong>Contact Email:</strong> {{ dog_info[1] }}</p>
+        <a href="{{ url_for('feed') }}" class="button">Back to Feed</a>
+    </div>
+{% endblock %}

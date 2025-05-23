@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Post a Dog for Adoption</h1>
+    <form action="{{ url_for('post_dog') }}" method="post" enctype="multipart/form-data">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required>
+
+        <label for="photo">Photo:</label>
+        <input type="file" id="photo" name="photo" required>
+
+        <label>
+            <input type="checkbox" name="with_other_dogs"> Gets along with other dogs
+        </label>
+
+        <p>
+        <label>
+            <input type="checkbox" name="with_kids"> Compatibility with small children
+        </label>
+        </p>
+        <label for="owner_name">Your Name:</label>
+        <input type="text" id="owner_name" name="owner_name" required>
+
+        <label for="contact_email">Contact Email:</label>
+        <input type="email" id="contact_email" name="contact_email" required>
+
+        <input type="submit" value="Post Dog">
+    </form>
+{% endblock %}

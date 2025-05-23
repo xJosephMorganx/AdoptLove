@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Dogs Available for Adoption</h1>
+    {% for dog in dogs %}
+        <div class="dog-card">
+            <img src="{{ url_for('static', filename='images/' ~ dog[3]) }}" alt="{{ dog[1] }}">
+            <h2>{{ dog[1] }}</h2>
+            <p><strong>Age:</strong> {{ dog[2] }}</p>
+            <p class="status {% if dog[4] %}with-dogs{% else %}not-with-dogs{% endif %}">
+                Gets along with other dogs: {% if dog[4] %}Yes{% else %}No{% endif %}
+            </p>
+            <p class="status {% if dog[5] %}with-kids{% else %}not-with-kids{% endif %}">
+                Compatibility with small children: {% if dog[5] %}Yes{% else %}No{% endif %}
+            </p>
+            <a href="{{ url_for('adopt', dog_id=dog[0]) }}" class="button">I want to adopt this dog</a>
+        </div>
+    {% endfor %}
+{% endblock %}

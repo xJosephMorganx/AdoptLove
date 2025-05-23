@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Welcome to Adopt Love</h1>
+    <p>
+    <h2>Find your new furry friend or give a dog a new home!</h2>
+    </p>
+    <div class="button-container">
+        <a href="{{ url_for('feed') }}" class="button">I want to adopt a dog</a>
+        <a href="{{ url_for('post_dog') }}" class="button">I want to post a dog for adoption</a>
+    </div>
+{% endblock %}

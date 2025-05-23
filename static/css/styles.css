@@ -1,0 +1,197 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+nav {
+    background-color: #bf49a5;
+    padding: 1rem;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+nav .logo {
+    height: 40px;
+    width: auto;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 1rem;
+}
+
+h1 {
+    color: #bf49a5;
+    text-align: center;
+}
+
+h2 {
+    color: #333;
+    text-align: center;
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+    font-size: 1.25rem;
+    font-weight: normal;
+}
+
+.button {
+    background-color: #007bff;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 150px;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.button:active {
+    background-color: #003d7a;
+}
+
+.button-disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.button-container .button {
+    margin: 0;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.checkbox-container input[type="checkbox"] {
+    margin: 0;
+    margin-right: 0.5rem;
+}
+
+.checkbox-container label {
+    margin: 0;
+}
+
+form {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: auto;
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="email"],
+form input[type="file"] {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+}
+
+form input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.dog-card {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.dog-card img {
+    max-width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.dog-card h2 {
+    margin: 0.5rem 0;
+}
+
+.dog-card .status {
+    font-weight: bold;
+}
+
+.dog-card .status.with-dogs {
+    color: green;
+}
+
+.dog-card .status.with-kids {
+    color: green;
+}
+
+.dog-card .status.not-with-dogs {
+    color: red;
+}
+
+.dog-card .status.not-with-kids {
+    color: red;
+}
+
+.dog-card .button {
+    margin: 1rem auto;
+}
+
+.adopt-info {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+}
