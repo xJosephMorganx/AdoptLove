@@ -1,46 +1,219 @@
-# ADOPT LOVE
-#### Video Demo:  <https://youtu.be/O3sOeetajDY>
-#### Description:
-***Hola mundo!***
+# Adopt Love
 
-My name is José Luis Gómez Sánchez and I am from Guadalajara, Mexico.
+#### Video Demo: https://youtu.be/O3sOeetajDY
 
-I had two reasons for deciding to create this project, first, after working on pset 9, I felt comfortable using Flask (my second favorite topic in the course, just after databases). Second, because in the part of the city where I live, there is a severe problem with stray dogs. I have adopted 3 dogs so far, but due to my financial constraints, I don't think I can adopt more at the moment. That's why I decided to create a web application to facilitate adoption, both for those who want to put a dog up for adoption and for those who want to adopt a dog.
+## Description
 
-I decided to do it in Visual Studio standalone app because I wanted to remove the training wheels from CS50.
+Adopt Love is a web application created as my final project for CS50. The main goal of the project is to provide a simple platform where people can post dogs for adoption and where potential adopters can browse the available dogs and contact their owners.
 
-I named this web app “Adopt Love,” and although the frontend is quite simple, since CS50 was my first experience writing code, it was quite challenging to create it from scratch. I decided to draw inspiration from pset 9, specifically from “finance.”
+The idea for this project came from a real problem in my community. In the area where I live in Guadalajara, Mexico, there are many stray dogs. I have adopted dogs myself, but I know that not everyone is able to adopt every animal they find. Because of that, I wanted to create a small web application that could help connect people who want to give a dog a home with people who are trying to responsibly find one.
 
-I started with the basics from my perspective: creating an app.py. I began by importing the libraries I thought were necessary: Flask for importing the classes and functions needed to create a web application with Flask, sqlite3 for interacting with SQLite databases, and OS for interacting with the operating system, in this case, for handling file paths.
+This project was also important to me from a learning perspective. CS50 was my first serious experience with programming, and Adopt Love allowed me to apply several topics from the course in a single project: Python, Flask, SQLite, HTML, CSS, routing, templates, forms, file uploads, and dynamic content rendering.
 
-Next, I created the Flask application instance and configured the folder where images uploaded by users who post their dogs for adoption will be stored.
+Although the application is simple, it represents a complete web app with a clear purpose, a database, user input, image handling, and multiple pages connected through Flask routes.
 
-Thanks to the fact that I am currently taking a database class at the university, this part was one of the simplest for me. After creating a database named dogs.db, I defined a function to create a table called dogs, where I included an auto-incrementing ID, the dog’s name, the dog’s age, a photo, the dog's owner's name, the owner’s contact email, and a timestamp using the current date.
+## Objective
 
-![app1](/assets/images/image1.png)
+The objective of Adopt Love is to make the dog adoption process easier and more accessible by allowing users to:
 
-Then, I decided to create a Jinja2 template called “base.html.” Here, I declared the doctype and the basic HTML tag, followed by the header where I used metadata, in this case, UTF-8, which includes most characters from all languages. I configured the viewport to be responsive, ensuring the design adjusts correctly on different screen sizes, and set the page title, which appears on the browser tab. I also linked an external CSS stylesheet to format the page and added a Flask function that generates the correct URL for the CSS file in the static folder.
+- Register dogs that are available for adoption.
+- Upload a photo of each dog.
+- Share useful information about the dog, such as age and compatibility with other dogs or small children.
+- Display all registered dogs in a public feed.
+- Allow potential adopters to access the owner's contact information.
 
-I also decided to create an extremely simple navigation menu that only features a heart logo with a dog paw in the middle, which, when clicked, takes you to the index.
+The project is not intended to be a full professional adoption platform yet, but rather a functional prototype that demonstrates how technology can help organize and share adoption information in a simple way.
 
-![base template](/assets/images/image2.png)
+## Problem the Project Addresses
 
-Returning to app.py, I added the route for the main page, calling it “index.html,” a route for the page with a form to post a dog for adoption, named “post_dog.html,” a route for the page where you can view the dogs that have been registered for adoption, called “feed.html,” and a route for another page where, after selecting a dog you want to adopt, it shows the owner’s name and contact email.
+In many communities, stray dogs are a common issue. Some people are willing to help but do not always have an organized way to share adoption information. Social media can be useful, but posts can easily get lost, and the information is not always structured.
 
-![app2](/assets/images/image3.png)
+Adopt Love tries to solve this problem by providing a dedicated place where each dog can have its own adoption post with relevant information and a photo. This makes it easier for someone interested in adopting to browse available dogs and contact the person responsible for the post.
 
-In index.html, I used the base template and, within the block, simply provided a brief welcome message, a subtitle explaining what the page is for, and two buttons: one to view the dogs available for adoption and another to fill out a form to post a dog for adoption.
+## Features
 
-![Index](/assets/images/image4.png)
+- Home page with a short introduction to the application.
+- Form to post a dog for adoption.
+- Image upload for each dog.
+- SQLite database to store dog and owner information.
+- Feed page that displays all dogs available for adoption.
+- Compatibility information, such as whether the dog gets along with other dogs or small children.
+- Contact page where users can see the owner’s contact information.
+- Simple and clean interface created with HTML and CSS.
+- Reusable base template using Jinja2.
 
-For post_dog.html, I again used the base template and created a form with a text input for the dog's name, a numeric input for the dog’s age, a file input to upload the dog’s photo, two checkbox inputs to specify if the dog can get along with other dogs and if it is good with small children, another text input for the owner's name, an email input for the owner's contact email, and finally a button to submit the form. I added IDs for all these fields to link them to the database.
+## Technologies Used
 
-![post_dog](/assets/images/image5.png)
+- Python
+- Flask
+- SQLite
+- HTML
+- CSS
+- Jinja2
 
-For feed.html, I used the Jinja2 template again, starting a loop that iterates over a list of dogs (dogs) and stores each element in a variable named “dog” during each iteration. Inside the loop, I created a container for each dog in the list, then displayed a picture of the dog by generating a URL for each image, provided text for the dog’s name, and indicated whether the dog can get along with other dogs and if it is compatible with small children. This text is dynamic: if the response is positive, it is shown in green, and if negative, in red. It shows the dog’s age, preceded by the label "Age:", and finally generates a URL to view the owner’s contact information in the “adopt.html” template.
+## Project Structure
 
-![feed](/assets/images/image6.png)
+```text
+AdoptLove/
+├── assets/
+│   └── images/              # Images used in this README
+├── static/
+│   ├── css/
+│   │   └── styles.css       # Main stylesheet
+│   └── images/              # Dog images uploaded through the application
+├── templates/
+│   ├── adopt.html
+│   ├── base.html
+│   ├── feed.html
+│   ├── index.html
+│   └── post_dog.html
+├── .gitignore
+├── app.py                   # Main Flask application
+├── dogs.db                  # SQLite database
+├── README.md
+└── requirements.txt
+```
 
-I also created a CSS file to style everything above, although I kept it quite simple. I used Arial font and a white background, adding a touch of color by making the navigation bar magenta and including the previously described logo. I also used a container for the form and the feed and changed the headers to magenta.
+## How the Application Works
 
-I genuinely enjoyed working on this project as it is something I am passionate about. However, before putting it online, I would like to implement a method to keep track of adopted dogs and ensure they are being treated responsibly. I hope to implement this feature in the future, but for now, I believe, it is a good foundation to continue working on.
+Adopt Love is built using Flask. The application starts from `app.py`, where the Flask app is created, the database connection is handled, and the different routes of the website are defined.
+
+The app uses SQLite as its database. The database stores information about each dog posted for adoption, including the dog’s name, age, image, compatibility information, owner’s name, owner’s email, and the date when the post was created.
+
+The frontend is built with HTML templates using Jinja2. A base template, `base.html`, is used to define the general structure of the pages, including the navigation bar and the link to the CSS file. Other pages extend this base template to avoid repeating the same HTML structure.
+
+The CSS file is located in `static/css/styles.css` and is used to style the pages, forms, buttons, images, and general layout of the application.
+
+## Main Pages
+
+### Home Page
+
+The home page introduces the purpose of Adopt Love and gives users a simple starting point. From here, they can choose whether they want to browse the dogs available for adoption or post a new dog for adoption.
+
+This page works as the main entry point of the application and provides a quick overview of what the platform is for.
+
+![Home Page](assets/images/home.png)
+
+### Post a Dog Page
+
+The **Post a Dog** page allows users to submit information about a dog that is available for adoption. The form includes fields for the dog’s name, age, photo, owner’s name, owner’s contact email, and compatibility information, such as whether the dog gets along with other dogs or with small children.
+
+When the form is submitted, the data is stored in the SQLite database, and the uploaded image is saved so it can later be displayed in the adoption feed.
+
+![Post a Dog Form](assets/images/post_dog.png)
+
+### Adoption Feed
+
+The **Adoption Feed** page displays all dogs that have been registered in the application. Each dog appears with its photo, name, age, and compatibility details.
+
+This page is generated dynamically using Jinja2. Instead of writing each dog manually in HTML, the application retrieves the stored records from the database and creates a card for each one automatically.
+
+This section is one of the most important parts of the application because it allows potential adopters to browse all the available dogs in one place.
+
+![Adoption Feed](assets/images/feed.png)
+
+### Contact Page
+
+When a user is interested in adopting a specific dog, they can open the **Contact Page**. This page displays the owner’s name and email address so that the potential adopter can contact them directly.
+
+This makes the process simple and direct, since the application connects the person interested in adoption with the person responsible for the dog.
+
+![Contact Page](assets/images/contact.png)
+
+## Installation and Usage
+
+To run this project locally, first clone the repository:
+
+```bash
+git clone https://github.com/your-username/AdoptLove.git
+cd AdoptLove
+```
+
+Create and activate a virtual environment:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+```
+
+Install the required dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the Flask application:
+
+```bash
+flask run
+```
+
+Then open the local development server in your browser.
+
+Depending on the configuration, the application may also be run with:
+
+```bash
+python app.py
+```
+
+## Database
+
+The project uses a SQLite database named `dogs.db`.
+
+The database stores the information submitted through the adoption form. Each record represents a dog available for adoption and includes data such as:
+
+- Dog name
+- Dog age
+- Dog photo
+- Compatibility with other dogs
+- Compatibility with small children
+- Owner name
+- Owner email
+- Date of creation
+
+SQLite was chosen because it is simple, lightweight, and useful for small projects or prototypes like this one.
+
+## Design Decisions
+
+I decided to use Flask because it was one of the topics I enjoyed the most during CS50. After working with Flask in the course, I wanted to create a project that expanded on what I had learned and allowed me to build something more personal.
+
+I also chose SQLite because it allowed me to store adoption posts without needing a more complex database system. For this type of project, SQLite was enough to demonstrate how data can be saved, retrieved, and displayed dynamically.
+
+The design of the interface is intentionally simple. Since the main purpose of the project was functionality and learning, I focused first on making the application work correctly. The visual design can be improved in future versions.
+
+## Challenges
+
+One of the main challenges was building a complete project from scratch. Since this was one of my first programming projects, I had to understand how the backend, frontend, database, and templates worked together.
+
+Another challenge was handling user-submitted data and displaying it dynamically. Learning how to connect Flask routes with HTML templates and database queries was an important part of the project.
+
+At the time I originally created this project, I was also still learning how GitHub worked. Because of that, the first version of the README included screenshots of the code instead of focusing on the application itself. This updated README better represents the project and follows a more standard structure for a GitHub repository.
+
+## Future Improvements
+
+Some possible improvements for future versions of Adopt Love include:
+
+- Add user accounts and authentication.
+- Allow owners to edit or delete their adoption posts.
+- Add a status system to mark dogs as adopted.
+- Add search and filtering by age, compatibility, or location.
+- Improve the visual design and make the interface more responsive.
+- Add validations for uploaded files.
+- Add better error handling for missing or incorrect data.
+- Add a system to help verify responsible adoption.
+- Add follow-up features after adoption.
+- Deploy the application online so it can be used by other people.
+
+## Personal Reflection
+
+This project was especially meaningful to me because it combined programming with a real problem that I care about. Building Adopt Love helped me understand how Flask applications are structured, how templates work, how to connect a web application to a database, and how to handle user-submitted information.
+
+It was also a very important learning experience because it showed me that programming can be used to create tools that are connected to real-life situations. Even though the application is simple, it gave me a better understanding of how a full web application works.
+
+Looking back, I can see that the original version of the project documentation was not very standard. I explained too much of the code directly and used screenshots of the source code instead of showing the application running. This updated README presents the project in a clearer and more professional way.
+
+Adopt Love is a simple project, but it was an important step in my learning process and a foundation that could be improved into a more complete adoption platform in the future.
+
+## License
+
+This project is licensed under the MIT License.
